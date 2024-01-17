@@ -18,12 +18,12 @@ public class AuthController {
   @Autowired
   private AuthService authService;
 
-  @PostMapping("/addNewUser")
+  @PostMapping("/addUser")
   public UserResponse addNewUser(@RequestBody AddUserRequest userInfo) {
     return authService.addUser(userInfo);
   }
 
-  @PostMapping("/generateToken")
+  @PostMapping("/login")
   public AuthResponse authenticateAndGetToken(@RequestBody AuthRequest authRequest) {
     return this.authService.loginUser(authRequest);
   }
